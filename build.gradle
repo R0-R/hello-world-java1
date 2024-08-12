@@ -16,6 +16,7 @@ mavenCentral()
 dependencies {
 testImplementation 'junit:junit:4.13.2'
 }
+
 test {
 // Specify the directory containing test classes
 testClassesDirs = sourceSets.test.output.classesDirs
@@ -26,6 +27,7 @@ events 'passed', 'skipped', 'failed'
 }
 finalizedBy jacocoTestReport
 }
+
 jar {
 manifest {
 attributes 'Main-Class': 'com.example.HelloWorld'
@@ -34,6 +36,7 @@ from sourceSets.main.output // Include compiled classes in the JAR
 archiveBaseName = 'hello-world-java' // Name of the JAR file
 destinationDirectory = file('build/libs') // Output directory for the JAR file
 }
+
 jacocoTestReport {
 dependsOn test
 reports {
